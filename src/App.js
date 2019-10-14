@@ -12,7 +12,7 @@ function App () {
 
   return (
     <div className='index'>
-      <h2>Fellowship of the Ring</h2>
+      <h2>Fellowship of the Ring hecho por Oscar Osses A.</h2>
       <div className='container'>
         <div className='search-input'>
           <input type='text' placeholder='search hero' />
