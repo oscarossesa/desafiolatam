@@ -2,27 +2,47 @@ import React, { Component } from 'react';
 
 class HeroTable extends Component {
 
-	useRing = () => {
-		console.log('usar anillo');
+	constructor(props){
+		super(props)
+
+		this.state = {
+			characters: props.characters,
+			showRings: true,
+		}
 	}
 
-	killHero = () => {
-		console.log('kill hero');
+	//Usar anillo: Esconde el row de la tabla y oculta la opción de usar anillo a todos los demás.
+	useRing = (id) => {
+		return () => {
+			console.log(`usar anillo`);
+			const characters = this.state.characters;
+			const newCharacters = characters.filter(character => character.id !== id)
+			this.setState({ characters: newCharacters, showRings: false });
+		}
 	}
 
-	renderTableBody = (props) => {
-		console.log(this.props.characters);
+	//Kill: Tacha (Le agrega un estilo grisáceo) y manda al final de la tabla al row.
+	killHero = (id) => {
+		return () => {
+			console.log(`kill hero ${id}`);
+		}
+	}
+
+	renderTableBody = () => {
+		console.log(this.state.characters);
 		return (
-			this.props.characters.map(character => (
+			this.state.characters.map(character => (
 				<tr className='character-row' key={character.age}>
 					<td>{character.name}</td>
 					<td>{character.race}</td>
 					<td>{character.age}</td>
 					<td>{character.weapon}</td>
 					<td>
-						<div className='controls'>
-							<div onClick={this.killHero}> ☠ Kill</div>
-							<div onClick={this.useRing}><span role='img' aria-label='icono'>💍</span> Use Ring</div>
+						<div className='controls'>		
+							<div onClick={this.killHero(character.id)} className='eliminado'> ☠ Kill</div>
+							{ this.state.showRings ? 
+								<div onClick={this.useRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> : 
+								null }
 						</div>
 					</td>
 				</tr>
