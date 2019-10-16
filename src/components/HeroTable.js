@@ -21,7 +21,7 @@ class HeroTable extends Component {
 					<td>{character.weapon}</td>
 					<td>
 						<div className='controls'>
-							<div>☠ Kill</div>
+							<div onClick={this.killHero}> ☠ Kill</div>
 							<div onClick={this.useRing}><span role='img' aria-label='icono'>💍</span> Use Ring</div>
 						</div>
 					</td>
