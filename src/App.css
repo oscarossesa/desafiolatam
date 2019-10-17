@@ -43,3 +43,8 @@ table {
 .controls div {
   cursor: pointer;
 }
+
+.character-dead {
+  background-color: gray;
+  /* text-decoration:line-through; */
+}
