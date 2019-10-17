@@ -17,22 +17,33 @@ class HeroTable extends Component {
 			console.log(`usar anillo`);
 			const characters = this.state.characters;
 			const newCharacters = characters.filter(character => character.id !== id)
-			this.setState({ characters: newCharacters, showRings: false });
+			this.setState({ 
+				characters: newCharacters, 
+				showRings: false 
+			});
 		}
 	}
 
 	//Kill: Tacha (Le agrega un estilo grisáceo) y manda al final de la tabla al row.
 	killHero = (id) => {
 		return () => {
-			console.log(`kill hero ${id}`);
+			// usando destructuring obtengo el array de characters
+			const { characters } = this.state;			
+			// identifico el id del elemento a mover al final del array
+			const index = characters.findIndex(character => character.id === id);
+			// muevo el elemento al final del array
+			characters.push(characters.splice(index, 1)[0]);			
+			// actualizo el state para que el componente se renderice y se refleje el cambio
+			this.setState({ 
+				characters: characters,
+			});
 		}
 	}
 
 	renderTableBody = () => {
-		console.log(this.state.characters);
 		return (
 			this.state.characters.map(character => (
-				<tr className='character-row' key={character.age}>
+				<tr key={character.id} className='character-row'>
 					<td>{character.name}</td>
 					<td>{character.race}</td>
 					<td>{character.age}</td>
