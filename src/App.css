@@ -43,3 +43,7 @@ table {
 .controls div {
   cursor: pointer;
 }
+
+.row-color-kill {
+  background-color: gray;
+}

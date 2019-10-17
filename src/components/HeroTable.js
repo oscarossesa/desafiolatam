@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import HeroRow from './HeroRow';
 
 class HeroTable extends Component {
 
-	constructor(props){
+	constructor(props) {
 		super(props)
-
-		this.state = {
-			characters: props.characters,
-			showRings: true,
-		}
+		console.log('HeroTable');
 	}
 
 	//Usar anillo: Esconde el row de la tabla y oculta la opción de usar anillo a todos los demás.
@@ -16,8 +13,10 @@ class HeroTable extends Component {
 		return () => {
 			console.log(`usar anillo`);
 			const characters = this.state.characters;
+			console.log('useRing');
+			console.log(characters);
 			const newCharacters = characters.filter(character => character.id !== id)
-			this.setState({ characters: newCharacters, showRings: false });
+			// this.setState({ characters: newCharacters, showRings: false });
 		}
 	}
 
@@ -25,47 +24,38 @@ class HeroTable extends Component {
 	killHero = (id) => {
 		return () => {
 			console.log(`kill hero ${id}`);
+
+
 		}
 	}
 
-	renderTableBody = () => {
-		console.log(this.state.characters);
-		return (
-			this.state.characters.map(character => (
-				<tr className='character-row' key={character.age}>
-					<td>{character.name}</td>
-					<td>{character.race}</td>
-					<td>{character.age}</td>
-					<td>{character.weapon}</td>
-					<td>
-						<div className='controls'>		
-							<div onClick={this.killHero(character.id)} className='eliminado'> ☠ Kill</div>
-							{ this.state.showRings ? 
-								<div onClick={this.useRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> : 
-								null }
-						</div>
-					</td>
-				</tr>
-			))
-		);
-	}
+	render() {
+		const { characters } = this.props;
 
-	render() {								
 		return (
-			<div>
-				<table className='characters-table'>
-					<tbody>
-						<tr className='character-row'>
-							<th>Name</th>
-							<th>Race</th>
-							<th>Age</th>
-							<th>Weapon</th>
-							<th></th>
-						</tr>
-						{this.renderTableBody()}
-					</tbody>
-				</table>
-			</div>
+			<table className='characters-table'>
+				<tbody>
+					<tr className='character-row'>
+						<th>Name</th>
+						<th>Race</th>
+						<th>Age</th>
+						<th>Weapon</th>
+						<th></th>
+					</tr>
+					{characters.map(character => (
+						<HeroRow 
+							key={character.id} 
+							id={character.id} 
+							name={character.name} 
+							race={character.race} 
+							age={character.age} 
+							weapon={character.weapon} 
+							onUseRing={this.useRing}
+							onUseKill={this.useKill}
+							showRings='true'></HeroRow>
+					))}
+				</tbody>
+			</table>
 		)
 	}
 }
