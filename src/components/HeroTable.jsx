@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
+import HeroRow from './HeroRow';
+import characters from '../api/characters';
 
 class HeroTable extends Component {
 
-	constructor(props){
-		super(props)
+	constructor() {
+		super()
 
 		this.state = {
-			characters: props.characters,
+			characters: null,
 			showRings: true,
 		}
 	}
 
+	componentDidMount() {
+		setTimeout(() => {
+			this.getCharacters();
+		}, 1000);
+	}
+
+	getCharacters() {
+		this.setState({ characters });
+	}
+
 	// Use ring function: Esconde el row de la tabla y oculta la opción de usar anillo a todos los demás.
-	useRing = (id) => {
+	handleUseRing = (id) => {
 		return () => {
 			// obtengo el array de characters desde el state.
 			const characters = this.state.characters;
@@ -27,7 +39,7 @@ class HeroTable extends Component {
 	}
 
 	// Kill function: Tacha (Le agrega un estilo grisáceo) y manda al final de la tabla al row.
-	killHero = (id) => {
+	handleKill = (id) => {
 		return () => {
 			// usando destructuring obtengo el array de characters
 			const { characters } = this.state;			
@@ -44,30 +56,18 @@ class HeroTable extends Component {
 		}
 	}
 
-	renderTableBody = () => {
-		return (
-			this.state.characters.map(character => (
-				<tr key={character.id} className={ character.dead ? 'character-row character-dead' : 'character-row'}>
-					<td>{character.name}</td>
-					<td>{character.race}</td>
-					<td>{character.age}</td>
-					<td>{character.weapon}</td>
-					<td>
-						<div className='controls'>		
-							<div onClick={this.killHero(character.id)}> ☠ Kill</div>
-							{ this.state.showRings ? 
-								<div onClick={this.useRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> : 
-								null }
-						</div>
-					</td>
-				</tr>
-			))
-		);
-	}
+	render() {
+		const { 
+			characters,
+			showRings,
+		} = this.state;
 
-	render() {								
-		return (
-			<div>
+		if (characters == null) {
+			return (
+				<div>Cargando datos...</div>
+			)
+		} else {
+			return (
 				<table className='characters-table'>
 					<tbody>
 						<tr className='character-row'>
@@ -77,11 +77,19 @@ class HeroTable extends Component {
 							<th>Weapon</th>
 							<th></th>
 						</tr>
-						{this.renderTableBody()}
+						{characters.map(character => (
+							<HeroRow 
+								key={character.id} 
+								character={character}
+								showRings={showRings}
+								handleUseRing={this.handleUseRing}
+								handleKill={this.handleKill}
+							></HeroRow>
+						))}
 					</tbody>
 				</table>
-			</div>
-		)
+			)
+		}
 	}
 }
 
