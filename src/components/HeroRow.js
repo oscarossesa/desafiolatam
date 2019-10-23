@@ -1,44 +1,25 @@
 import React, { Component } from 'react';
 
 class HeroRow extends Component {
-   constructor(props) {
-      super(props);
-
-      console.log('HeroRow');
-      console.log(props);
-
-      // this.state = {
-      //    characters: this.props,
-      //    showRings: true,
-      // }
-   }
-
-   handleOnClickRing = () => {
-      console.log('handleOnClickRing');
-
-      console.log(this.props.id);
-      //this.props.onUseRing(this.props.id)
-   }
-
-   handleOnClickKill = () => {
-      console.log('handleOnClickKill')
-      this.props.onUseKill(this.props.id)
-   }
-
    render() {
-      const { name, race, age, weapon } = this.props;
+      const {
+         character,
+         showRings,
+         handleUseRing,
+         handleKill,
+      } = this.props;
 
       return (
-         <tr className='character-row'>
-            <td>{name}</td>
-            <td>{race}</td>
-            <td>{age}</td>
-            <td>{weapon}</td>
+         <tr key={character.id} className={`character-row ${character.dead ? 'character-dead' : ''}`}>
+            <td>{character.name}</td>
+            <td>{character.race}</td>
+            <td>{character.age}</td>
+            <td>{character.weapon}</td>
             <td>
                <div className='controls'>
-                  <div onClick={this.handleOnClickKill}> ☠ Kill</div>
-                  {this.props.showRings ?
-                     <div onClick={this.handleOnClickRing}><span role='img' aria-label='icono'>💍</span> Use Ring</div> :
+                  <div onClick={handleKill(character.id)}> ☠ Kill</div>
+                  {showRings ?
+                     <div onClick={handleUseRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> :
                      null}
                </div>
             </td>

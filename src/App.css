@@ -47,3 +47,7 @@ table {
 .row-color-kill {
   background-color: gray;
 }
+
+.character-dead {
+  background-color: gray;
+}
