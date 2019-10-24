@@ -4,6 +4,9 @@ import characters from '../api/characters';
 import TableFilter from './TableFilter';
 import ButtonAdd from './ButtonAdd';
 import FormAdd from './FormAdd';
+import {
+	Table,
+} from 'react-bootstrap';
 
 class HeroTable extends Component {
 	constructor() {
@@ -88,7 +91,7 @@ class HeroTable extends Component {
 		state[property] = value;
 		this.setState(state);
 	}
-	
+
 	render() {
 		const {
 			characters,
@@ -102,22 +105,18 @@ class HeroTable extends Component {
 		} else {
 			return (
 				<div>
-					<FormAdd 
-						handleChange={this.handleChange}
-					/>
-					<ButtonAdd 
-						text='Agregar Heroe 2' 
-						handleAdd={this.handleAdd} />					
 					<TableFilter></TableFilter>
-					<table className='characters-table'>
-						<tbody>
-							<tr className='character-row'>
+					<Table responsive bordered>
+						<thead>
+							<tr>
 								<th>Name</th>
 								<th>Race</th>
 								<th>Age</th>
 								<th>Weapon</th>
 								<th></th>
 							</tr>
+						</thead>
+						<tbody>
 							{characters.map(character => (
 								<HeroRow
 									key={character.id}
@@ -128,7 +127,11 @@ class HeroTable extends Component {
 								></HeroRow>
 							))}
 						</tbody>
-					</table>
+					</Table>
+					<FormAdd handleChange={this.handleChange} />
+					<ButtonAdd
+						text='Agregar Heroe'
+						handleAdd={this.handleAdd} />
 				</div>
 			)
 		}

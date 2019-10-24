@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import HeroTable from './components/HeroTable';
+import { 
+  Container,
+  Row,
+} from 'react-bootstrap';
 
 class App extends Component {
-  render () {       
+  render() {
     return (
-      <div>
-        <div className='index'>
-          <h2>Fellowship of the Ring</h2>
-          <div className='container'>
-            <HeroTable></HeroTable>   
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">
+          <h1>Fellowship of the Ring</h1>
+        </Row>
+        <Row className="justify-content-md-center">
+          <HeroTable></HeroTable>
+        </Row>
+      </Container>
     )
   }
 }

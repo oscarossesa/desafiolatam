@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", "Roboto", "Oxygen",
@@ -15,18 +15,18 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */
 
-.container {
+/* .container {
   padding: 10px;
   margin-top: 40px;
 }
 
 .search-input {
   margin-bottom: 20px;
-}
+} */
 
-.character-row td {
+/* .character-row td {
   border-bottom: 1px solid white;
 }
 
@@ -42,7 +42,7 @@ table {
 
 .controls div {
   cursor: pointer;
-}
+} */
 
 .character-dead {
   background-color: gray;
