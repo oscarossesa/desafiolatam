@@ -26,7 +26,6 @@ class HeroRow extends Component {
          </tr>
       );
    }
-
 }
 
 export default HeroRow;
