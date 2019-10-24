@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HeroTableContainer from './components/HeroTableContainer';
+import HeroTable from './components/HeroTable';
 
 class App extends Component {
   render () {       
@@ -9,7 +9,7 @@ class App extends Component {
         <div className='index'>
           <h2>Fellowship of the Ring</h2>
           <div className='container'>
-            <HeroTableContainer></HeroTableContainer>   
+            <HeroTable></HeroTable>   
           </div>
         </div>
       </div>
