@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HeroTable from './components/HeroTable';
+import HeroTableContainer from './components/HeroTableContainer';
 import { 
   Container,
   Row,
@@ -14,7 +14,7 @@ class App extends Component {
           <h1>Fellowship of the Ring</h1>
         </Row>
         <Row className="justify-content-md-center">
-          <HeroTable></HeroTable>
+          <HeroTableContainer></HeroTableContainer>
         </Row>
       </Container>
     )
