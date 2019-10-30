@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroRowControls from './HeroRowControls';
 
 const HeroRow = (props) => {
    const { character, handleKill, handleUseRing, showRings } = props;
@@ -10,12 +11,12 @@ const HeroRow = (props) => {
          <td>{character.age}</td>
          <td>{character.weapon}</td>
          <td>
-            <div className='controls'>
-               <div onClick={handleKill(character.id)}> ☠ Kill</div>
-               {showRings ?
-                  <div onClick={handleUseRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> :
-                  null}
-            </div>
+            <HeroRowControls 
+               character={character}
+               handleKill={handleKill}
+               handleUseRing={handleUseRing}
+               showRings={showRings}
+            ></HeroRowControls>
          </td>
       </tr>
    );
