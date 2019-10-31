@@ -1,8 +1,5 @@
 import React from 'react';
 import HeroRow from './HeroRow';
-import {
-	Table,
-} from 'react-bootstrap';
 
 const HeroTable = (props) => {
 	const {
@@ -18,30 +15,28 @@ const HeroTable = (props) => {
 		)
 	} else {
 		return (
-			<div>
-				<Table responsive bordered>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Race</th>
-							<th>Age</th>
-							<th>Weapon</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						{characters.map(character => (
-							<HeroRow
-								key={character.id}
-								character={character}
-								showRings={showRings}
-								handleUseRing={handleUseRing}
-								handleKill={handleKill}
-							></HeroRow>
-						))}
-					</tbody>
-				</Table>				
-			</div>
+			<table className="table table-sm">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Raza</th>
+						<th>Edad</th>
+						<th>Arma</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{characters.map(character => (
+						<HeroRow
+							key={character.id}
+							character={character}
+							showRings={showRings}
+							handleUseRing={handleUseRing}
+							handleKill={handleKill}
+						></HeroRow>
+					))}
+				</tbody>
+			</table>
 		)
 	}
 
