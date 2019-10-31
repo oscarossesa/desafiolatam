@@ -5,7 +5,7 @@ const HeroRowcontainer = (props) => {
    
    return (
       <div className='controls'>
-         <div onClick={handleKill(character.id)}> ☠ Kill</div>
+         <div onClick={handleKill(character.id)}><span role='img' aria-label='icono'>☠</span> Kill</div>
          {showRings ?
             <div onClick={handleUseRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div> :
             null}

@@ -31,6 +31,20 @@ class App extends Component {
   }
 
   getCharacters() {
+
+    // api
+    // fetch('http://localhost:8080/characters')
+    //   .then((response) => {
+    //     console.log(response);        
+    //     return response.json();
+    //   })
+    //   .then((characters) => {
+    //     console.log(characters);
+    //     this.setState({ characters });
+    //   });
+    
+
+    // mock
     this.setState({ characters });
   }
 

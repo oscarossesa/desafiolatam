@@ -22,7 +22,7 @@ const HeroTable = (props) => {
 						<th>Raza</th>
 						<th>Edad</th>
 						<th>Arma</th>
-						<th></th>
+						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", "Roboto", "Oxygen",
@@ -8,41 +8,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.index {
-  height: 100vh;
-  background-color: #282c34;
-  color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-} */
-
-/* .container {
-  padding: 10px;
-  margin-top: 40px;
-}
-
-.search-input {
+/* .search-input {
   margin-bottom: 20px;
-} */
+}  */
 
 /* .character-row td {
   border-bottom: 1px solid white;
 }
+*/
 
-table {
+.table {
   border-collapse: collapse;
 }
 
 .controls {
   display: flex;
   flex-direction: row;
-  margin: 5px;
+  /*margin: 5px;*/
 }
 
 .controls div {
   cursor: pointer;
-} */
+  padding: 0 10px;
+} 
 
 .character-dead {
   background-color: gray;
