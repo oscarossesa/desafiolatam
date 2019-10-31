@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", "Roboto", "Oxygen",
@@ -15,18 +15,18 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */
 
-.container {
+/* .container {
   padding: 10px;
   margin-top: 40px;
 }
 
 .search-input {
   margin-bottom: 20px;
-}
+} */
 
-.character-row td {
+/* .character-row td {
   border-bottom: 1px solid white;
 }
 
@@ -42,8 +42,58 @@ table {
 
 .controls div {
   cursor: pointer;
-}
+} */
 
 .character-dead {
   background-color: gray;
+}
+
+.form-control {
+  height: auto;
+}
+
+.navbar {
+  /*background-color: #ffffff;*/
+  min-height: 80px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+
+.formAdd {
+  padding-top: 90px;
+}
+
+.loading {
+  padding-top: 90px;
+}
+
+.top-margin-xs { margin-top: 15px; }
+.top-margin-sm { margin-top: 30px; }
+.top-margin-lg { margin-top: 60px; }
+
+#footer {
+  padding: 20px 0;
+  text-align: center;
+  color: #ffffff;
+  
+}
+
+.footerTitle {
+  margin-top: 25px;
+}
+
+.bg-dark {
+  background-color: #1a1a1a;
+}
+
+a i {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.list-inline {
+  list-style: none;
+}
+
+.list-inline-item {
+  padding: 10px 15px;
 }
