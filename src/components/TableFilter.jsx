@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class TableFilter extends Component {
-    render() {
-        return (
-            <div className='search-input'>
-                <input type='text' placeholder='search hero' />
-            </div>
-        )
-    }
+const TableFilter = () => {
+    return (
+        <div className='search-input'>
+            <input type='text' placeholder='search hero' />
+        </div>
+    )
 }
 
 export default TableFilter
