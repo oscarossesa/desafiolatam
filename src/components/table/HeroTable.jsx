@@ -2,17 +2,16 @@ import React from 'react';
 import HeroRow from './HeroRow';
 
 const HeroTable = (props) => {
+
 	const {
 		characters,
-		showRings,
+		handleKillCharacter,
 		handleUseRing,
-		handleKill,
+		showRings,
 	} = props;
 
-	if (characters == null) {
-		return (
-			<div>Cargando datos...</div>
-		)
+	if (characters.length === 0) {
+		return <div>Cargando datos...</div>
 	} else {
 		return (
 			<table className="table table-sm">
@@ -30,16 +29,15 @@ const HeroTable = (props) => {
 						<HeroRow
 							key={character.id}
 							character={character}
-							showRings={showRings}
+							handleKillCharacter={handleKillCharacter}
 							handleUseRing={handleUseRing}
-							handleKill={handleKill}
+							showRings={showRings}
 						></HeroRow>
 					))}
 				</tbody>
 			</table>
 		)
 	}
-
 }
 
 export default HeroTable;

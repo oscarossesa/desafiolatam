@@ -2,7 +2,12 @@ import React from 'react';
 import HeroRowControls from './HeroRowControls';
 
 const HeroRow = (props) => {
-   const { character, handleKill, handleUseRing, showRings } = props;
+   const { 
+      character, 
+      handleKillCharacter, 
+      handleUseRing, 
+      showRings,
+   } = props;
 
    return (
       <tr key={character.id} className={`character-row ${character.dead ? 'character-dead' : ''}`}>
@@ -13,7 +18,7 @@ const HeroRow = (props) => {
          <td>
             <HeroRowControls 
                character={character}
-               handleKill={handleKill}
+               handleKillCharacter={handleKillCharacter}
                handleUseRing={handleUseRing}
                showRings={showRings}
             ></HeroRowControls>
