@@ -13,3 +13,6 @@ https://stackoverflow.com/questions/35762351/correct-way-to-handle-conditional-s
 
 Desafío 2: ¿cómo modificar una propiedad de un elemento de un array?
 https://stackoverflow.com/questions/4689856/how-to-change-value-of-object-which-is-inside-an-array-using-javascript-or-jquer
+
+Desafío 3: Uso de Hooks
+https://www.taniarascia.com/crud-app-in-react-with-hooks/
