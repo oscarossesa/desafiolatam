@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
    return (
-      <div>
+      <>
          <h6 className="footerTitle">Fellowship of the Ring</h6>
          <ul className="list-inline">
             <li className="list-inline-item">
@@ -16,7 +16,7 @@ const Footer = () => {
                </a>
             </li>
          </ul>
-      </div>
+      </>
    )
 }
 
