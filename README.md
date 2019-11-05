@@ -1,5 +1,7 @@
 Este proyecto es creado como parte del curso ... dictado por Desafiolatam
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Bibliografía
 
 Desafío 2: ¿cómo eliminar el heroe que usa el anillo?
