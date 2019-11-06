@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10c7a6cf7ed42e1da58eb64e2419ef10",
+    "revision": "110d26f115a398ef453d53f7e02a2d63",
     "url": "/desafiolatam/index.html"
   },
   {
-    "revision": "0134f002eb741e3a1c9c",
+    "revision": "7d9e0b258adc785a95b9",
     "url": "/desafiolatam/static/css/main.89d67253.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/desafiolatam/static/js/2.ee6fb2d6.chunk.js"
   },
   {
-    "revision": "0134f002eb741e3a1c9c",
-    "url": "/desafiolatam/static/js/main.281c030d.chunk.js"
+    "revision": "7d9e0b258adc785a95b9",
+    "url": "/desafiolatam/static/js/main.59a0a84e.chunk.js"
   },
   {
     "revision": "677ff9e600e9dcbaf80e",
