@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/desafiolatam/static/css/main.89d67253.chunk.css",
-    "main.js": "/desafiolatam/static/js/main.59a0a84e.chunk.js",
-    "main.js.map": "/desafiolatam/static/js/main.59a0a84e.chunk.js.map",
+    "main.js": "/desafiolatam/static/js/main.cd86a158.chunk.js",
+    "main.js.map": "/desafiolatam/static/js/main.cd86a158.chunk.js.map",
     "runtime-main.js": "/desafiolatam/static/js/runtime-main.4adfe0ee.js",
     "runtime-main.js.map": "/desafiolatam/static/js/runtime-main.4adfe0ee.js.map",
     "static/js/2.ee6fb2d6.chunk.js": "/desafiolatam/static/js/2.ee6fb2d6.chunk.js",
     "static/js/2.ee6fb2d6.chunk.js.map": "/desafiolatam/static/js/2.ee6fb2d6.chunk.js.map",
     "index.html": "/desafiolatam/index.html",
-    "precache-manifest.d6a0013accbc5ac0ec8d4eeed8fd2018.js": "/desafiolatam/precache-manifest.d6a0013accbc5ac0ec8d4eeed8fd2018.js",
+    "precache-manifest.a1bb311e510389587d6e53ec20972f08.js": "/desafiolatam/precache-manifest.a1bb311e510389587d6e53ec20972f08.js",
     "service-worker.js": "/desafiolatam/service-worker.js",
     "static/css/main.89d67253.chunk.css.map": "/desafiolatam/static/css/main.89d67253.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.4adfe0ee.js",
     "static/js/2.ee6fb2d6.chunk.js",
     "static/css/main.89d67253.chunk.css",
-    "static/js/main.59a0a84e.chunk.js"
+    "static/js/main.cd86a158.chunk.js"
   ]
 }

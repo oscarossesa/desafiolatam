@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/desafiolatam/precache-manifest.d6a0013accbc5ac0ec8d4eeed8fd2018.js"
+  "/desafiolatam/precache-manifest.a1bb311e510389587d6e53ec20972f08.js"
 );
 
 self.addEventListener('message', (event) => {
