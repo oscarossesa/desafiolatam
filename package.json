@@ -35,6 +35,7 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "standard": "^14.3.1"
   }
 }
