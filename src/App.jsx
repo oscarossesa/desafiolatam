@@ -79,6 +79,7 @@ const App = () => {
               <TableCell>{character.name}</TableCell>
               <TableCell>{character.race}</TableCell>
               <TableCell>{character.age}</TableCell>
+              <TableCell>{character.weapon}</TableCell>
               <TableCell>
                 <div className='controls'>
                   <div onClick={handleOnClicKill(character.id)}>
