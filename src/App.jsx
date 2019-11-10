@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import NavBar from './components/navBar/NavBar'
-import HeroTable from './components/table/HeroTable'
+import Footer from './components/layout/Footer'
 import datos from './api/characters'
 import FormAdd from './components/formAdd/FormAdd'
+import Table from './components/table/Table'
+import TableRow from './components/table/TableRow'
 import TableFilter from './components/table/TableFilter'
-import Footer from './components/layout/Footer'
+import TableCell from './components/table/TableCell'
 
 const App = () => {
   const [characters, setCharacters] = useState([])
   const [showRings, setShowRings] = useState(true)
 
   useEffect(() => {
-    console.log(datos)
     setTimeout(() => {
       getCharacters()
     }, 1000)
@@ -29,7 +30,7 @@ const App = () => {
   }
 
   // Kill function: Tacha (Le agrega un estilo grisáceo) y manda al final de la tabla al row.
-  const handleKillCharacter = id => {
+  const handleOnClicKill = id => {
     return () => {
       // identifico el id del elemento a mover al final del array.
       const index = characters.findIndex(character => character.id === id)
@@ -43,7 +44,7 @@ const App = () => {
   }
 
   // Use ring function: Esconde el row de la tabla y oculta la opción de usar anillo a todos los demás.
-  const handleUseRing = id => {
+  const handleOnClickUseRing = id => {
     return () => {
       // elimino el heroe que usa el anillo.
       const newCharacters = characters.filter(character => character.id !== id)
@@ -53,30 +54,52 @@ const App = () => {
     }
   }
 
-  return (<>
-    <NavBar />
-    <div className='container formAdd'>
-      <FormAdd
-        addCharacter={addCharacter}
-      />
+  return (
+    <>
+      <NavBar />
+      <div className='container formAdd'>
+        <FormAdd
+          addCharacter={addCharacter}
+        />
+        <div className='container top-margin-xs'>
+          <TableFilter />
+        </div>
+      </div>
       <div className='container top-margin-xs'>
-        <TableFilter />
+        <Table>
+          <TableRow withHeader>
+            <TableCell isHeader>Nombre</TableCell>
+            <TableCell isHeader>Raza</TableCell>
+            <TableCell isHeader>Edad</TableCell>
+            <TableCell isHeader>Arma</TableCell>
+            <TableCell isHeader />
+          </TableRow>
+          {characters.map((character, index) => (
+            <TableRow dead={character.dead} key={`${character.name}-${index}`}>
+              <TableCell>{character.name}</TableCell>
+              <TableCell>{character.race}</TableCell>
+              <TableCell>{character.age}</TableCell>
+              <TableCell>
+                <div className='controls'>
+                  <div onClick={handleOnClicKill(character.id)}>
+                    <span role='img' aria-label='icono'>☠</span> Kill
+                  </div>
+                  {showRings
+                    ? <div onClick={handleOnClickUseRing(character.id)}><span role='img' aria-label='icono'>💍</span> Use Ring</div>
+                    : null}
+                </div>
+              </TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          ))}
+        </Table>
       </div>
-    </div>
-    <div className='container top-margin-xs'>
-      <HeroTable
-        characters={characters}
-        handleKillCharacter={handleKillCharacter}
-        handleUseRing={handleUseRing}
-        showRings={showRings}
-      />
-    </div>
-    <section id='footer' className='top-margin-lg bg-dark'>
-      <div className='container'>
-        <Footer />
-      </div>
-    </section>
-          </>
+      <section id='footer' className='top-margin-lg bg-dark'>
+        <div className='container'>
+          <Footer />
+        </div>
+      </section>
+    </>
   )
 }
 
