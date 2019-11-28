@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <h6>v1.2 Desafío 3</h6>
+      <h6>Redux</h6>
     </>
   )
 }
